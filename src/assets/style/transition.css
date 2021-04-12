@@ -1,0 +1,53 @@
+.transition-active {
+  overflow: hidden;
+}
+
+.nextPage-enter-active,
+.nextPage-leave-active,
+.prevPage-enter-active,
+.prevPage-leave-active {
+  transition: all 0.3s ease-out;
+  position: absolute;
+}
+
+.nextPage-enter-to {
+  right: 0;
+}
+
+.nextPage-enter-from {
+  right: -100%;
+}
+
+.nextPage-leave-to {
+  left: -100%;
+}
+
+.nextPage-leave-from {
+  left: 0;
+}
+
+.prevPage-enter-to {
+  right: 0;
+}
+
+.prevPage-enter-from {
+  right: 100%;
+}
+
+.prevPage-leave-to {
+  right: -100%;
+}
+
+.prevPage-leave-from {
+  right: 0;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.1s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0.5;
+}

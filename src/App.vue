@@ -1,30 +1,56 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+  <div id="content">
+    <div id="nav">
+      <router-link to="/">Home</router-link> |
+      <router-link to="/about">About</router-link>
+    </div>
+    <router-view v-slot="{ Component, route }">
+      <div class="router-wrap">
+        <transition
+          appear
+          :name="route.meta.transitionName"
+          :mode="route.meta.transitionName === 'fade' ? 'out-in' : ''"
+          @enter="active"
+          @leave="active"
+          @after-enter="down"
+          @after-leave="down"
+        >
+          <component :is="Component" class="router-view" />
+        </transition>
+      </div>
+    </router-view>
   </div>
-  <router-view/>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script lang="ts">
+import { defineComponent } from 'vue'
+import { active, down } from '@/hooks/useHandleTransition'
+import '@/assets/style/transition.css'
 
+export default defineComponent({
+  setup () {
+    return { active, down }
+  }
+})
+</script>
+
+<style scoped>
+#content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
 #nav {
-  padding: 30px;
+  background-color: #99ccff;
+  padding: 10px;
 }
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
+.router-wrap {
+  position: relative;
+  flex: 1;
 }
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+.router-view {
+  width: 100%;
+  height: 100%;
 }
 </style>

@@ -1,7 +1,6 @@
 <template>
-  <div class="about">
-    <p>about</p>
-    <router-link to="/about/page">Page</router-link>
+  <div class="page">
+    <p>二级页面</p>
   </div>
 </template>
 
@@ -9,7 +8,7 @@
 import { defineComponent } from 'vue'
 
 export default defineComponent({
-  name: 'about',
+  name: 'page',
   setup () {
     return {}
   }
@@ -17,8 +16,8 @@ export default defineComponent({
 </script>
 
 <style scoped>
-.about {
-  background-color: #ffcc99;
+.page {
+  background-color: #ffcccc;
   box-sizing: border-box;
 }
 </style>
