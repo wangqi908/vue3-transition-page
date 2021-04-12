@@ -45,6 +45,9 @@ export default defineComponent({
   background-color: #99ccff;
   padding: 10px;
 }
+#nav a {
+  transition: all 0.2s;
+}
 .router-wrap {
   position: relative;
   flex: 1;
@@ -52,5 +55,10 @@ export default defineComponent({
 .router-view {
   width: 100%;
   height: 100%;
+}
+.router-link-active {
+  background-color: rgb(233, 141, 141);
+  transition: all 0.2s;
+  color: #fff;
 }
 </style>

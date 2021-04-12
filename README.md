@@ -1,4 +1,14 @@
-# vue3-vuex-ts
+# vue3-transition-page
+
+## 页面过渡效果
+
+[demo](angqi908.github.io/vue3-transition-page)
+
+
+
+```
+npm install
+```
 
 ## Project setup
 ```
